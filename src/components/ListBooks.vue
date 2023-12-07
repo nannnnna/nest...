@@ -3,18 +3,21 @@
       <NavigationMenu />
       <h1>List of Books</h1>
       <div class="divider"></div>
+      <input type="text" v-model="searchQuery" placeholder="Поиск книг" />
       <select v-model="selectedSort" @change="sortBooks">
         <option value="title">Сортировка по алфавиту названий</option>
         <option value="price_asc">Сортировка по возрастанию цены</option>
         <option value="price_desc">Сортировка по убыванию цены</option>
       </select>
       <div class="book-container">
+        <div v-for="book in filteredBooks" :key="book.title" class="book-card">
         <div v-for="book in books" :key="book.title" class="book-card">
           <img src="/images/img.png" alt="Изображение книги">
           <div>
             <h4>{{ book.title }}</h4>
             <p>{{ book.price }}</p>
             <a :href="book.bookUrl" class="btn btn-primary btn-buy">More</a>
+          </div>
           </div>
         </div>
       </div>
@@ -33,8 +36,17 @@ export default {
   data() {
     return {
       books: [],
-      selectedSort: 'title' // значение по умолчанию для сортировки
+      selectedSort: 'title',
+      searchQuery: ''// значение по умолчанию для сортировки
     };
+  },
+  computed: {
+    // Фильтрация списка книг в соответствии с поисковым запросом
+    filteredBooks() {
+      return this.books.filter(book => {
+        return book.title.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    }
   },
   methods: {
     sortBooks() {
