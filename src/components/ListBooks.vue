@@ -9,7 +9,7 @@
           <div>
             <h4>{{ book.title }}</h4>
             <p>{{ book.price }}</p>
-            <a href="#" class="btn btn-primary btn-buy">More</a>
+            <a :href="book.bookUrl" class="btn btn-primary btn-buy">More</a>
             <!-- Форма покупки и другие элементы -->
           </div>
         </div>
