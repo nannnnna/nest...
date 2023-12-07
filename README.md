@@ -6,6 +6,7 @@ cd vue-nest-master
 npm install
 npm install axios
 npm install ...?
+создам файл с зависимостями
 ```
 
 ### Compiles and hot-reloads for development
