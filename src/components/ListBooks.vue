@@ -3,14 +3,17 @@
       <NavigationMenu />
       <h1>List of Books</h1>
       <div class="divider"></div>
-      <ul>
-        <li v-for="book in books" :key="book.title">
-          <h3>{{ book.title }}</h3>
-          <p>URL: <a :href="book.bookUrl">{{ book.bookUrl }}</a></p>
-          <p>Price: {{ book.price }}</p>
-          <p>Status: {{ book.status }}</p>
-        </li>
-      </ul>
+      <div class="book-container">
+        <div v-for="book in books" :key="book.title" class="book-card">
+          <img src="путь_к_изображению" alt="Изображение книги">
+          <div>
+            <h4>{{ book.title }}</h4>
+            <p>{{ book.price }}</p>
+            <a href="#" class="btn btn-primary btn-buy">More</a>
+            <!-- Форма покупки и другие элементы -->
+          </div>
+        </div>
+      </div>
     </div>
   </template>
 

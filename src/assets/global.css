@@ -31,4 +31,68 @@ body {
       opacity: 1;
     }
   }
-  
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Центрирование карточек */
+  margin-top: 20px;
+}
+
+.book-card {
+  flex: 1 1 auto;
+  margin: 4px;
+  min-width: 250px;
+  max-width: 300px;
+  background-color: white; /* Фон карточки */
+  color: black; /* Цвет текста */
+  border: 2px solid red; /* Граница карточки */
+  border-radius: 12px; /* Закругление углов */
+  padding: 10px; /* Отступ внутри карточки */
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Закругление углов изображения */
+}
+
+.book-card h4 {
+  margin-top: 10px;
+}
+
+.book-card p {
+  font-size: 1rem;
+}
+
+.btn-buy {
+  background-color: red; /* Фон кнопки */
+  color: white; /* Цвет текста */
+  border-color: darkred; /* Граница кнопки */
+  margin-top: 10px;
+}
+
+.btn-buy:hover {
+  background-color: darkred; /* Фон при наведении */
+  border-color: black; /* Граница при наведении */
+}
+
+/* Стили для кнопки "Вверх" */
+#myBtn {
+  display: none; /* Скрыть кнопку */
+  position: fixed; /* Фиксированное позиционирование */
+  bottom: 20px; /* Положение от нижнего края */
+  right: 30px; /* Положение от правого края */
+  z-index: 99; /* Поверх других элементов */
+  border: none; /* Убрать границу */
+  outline: none; /* Убрать контур */
+  background-color: red; /* Фон кнопки */
+  color: white; /* Цвет текста */
+  cursor: pointer; /* Курсор в виде руки */
+  padding: 15px; /* Отступ внутри */
+  border-radius: 10px; /* Закругленные углы */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Фон при наведении */
+}
