@@ -4,25 +4,22 @@
     <h1>Feedback Form</h1>
     <div class="divider"></div>
 
-    <!-- Форма для комментариев -->
-    <form @submit.prevent="addComment">
-      <input type="text" v-model="newComment.name" placeholder="Имя" required>
-      <input type="text" v-model="newComment.surname" placeholder="Фамилия" required>
-      <textarea v-model="newComment.comment" placeholder="Комментарий" required></textarea>
-      <button type="submit">Отправить</button>
+    <form @submit.prevent="addComment" class="comment-form">
+      <input type="text" v-model="newComment.name" placeholder="Имя" required class="comment-input">
+      <input type="text" v-model="newComment.surname" placeholder="Фамилия" required class="comment-input">
+      <textarea v-model="newComment.comment" placeholder="Комментарий" required class="comment-textarea"></textarea>
+      <button type="submit" class="comment-submit">Отправить</button>
     </form>
 
-    <!-- Отображение комментариев -->
     <div class="comments-container">
       <div v-for="comment in comments" :key="comment.id" class="comment-card">
-        <p><strong>{{ comment.name }} {{ comment.surname }}</strong></p>
+        <p class="comment-author">{{ comment.name }} {{ comment.surname }}</p>
         <p class="comment-text">{{ comment.comment }}</p>
         <p class="comment-date">{{ comment.date }}</p>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import NavigationMenu from './NavigationMenu.vue';
 

@@ -103,11 +103,12 @@ body {
 }
 
 .comment-card {
-  background-color: black; /* Белый фон для карточек комментариев */
-  border: 1px solid #ddd; /* Граница карточки */
+  background-color: black;
+  border: 1px solid #ddd;
   padding: 10px;
   margin: 10px;
-  width: calc(33% - 20px); /* Ширина карточки */
+  border-radius: 10px; /* Скругленные края карточки */
+  width: calc(33% - 20px);
 }
 
 .comment-text {
@@ -121,4 +122,14 @@ body {
 
 .divider {
   background-color: white; /* Белый цвет разделителей */
+}
+.comment-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.comment-input, .comment-textarea, .comment-submit {
+  width: 80%; /* Ширина полей и кнопки */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px; /* Скругленные края */
 }
