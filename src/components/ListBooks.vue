@@ -5,7 +5,7 @@
       <div class="divider"></div>
       <div class="book-container">
         <div v-for="book in books" :key="book.title" class="book-card">
-          <img src="путь_к_изображению" alt="Изображение книги">
+          <img src="/images/img.png" alt="Изображение книги">
           <div>
             <h4>{{ book.title }}</h4>
             <p>{{ book.price }}</p>
