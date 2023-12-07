@@ -96,3 +96,29 @@ body {
 #myBtn:hover {
   background-color: #555; /* Фон при наведении */
 }
+.comments-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.comment-card {
+  background-color: black; /* Белый фон для карточек комментариев */
+  border: 1px solid #ddd; /* Граница карточки */
+  padding: 10px;
+  margin: 10px;
+  width: calc(33% - 20px); /* Ширина карточки */
+}
+
+.comment-text {
+  color: red; /* Красный цвет текста комментария */
+}
+
+.comment-date {
+  color: white;
+  font-size: 0.8rem; /* Меньший размер шрифта для даты */
+}
+
+.divider {
+  background-color: white; /* Белый цвет разделителей */
+}
