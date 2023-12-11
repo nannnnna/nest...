@@ -2,12 +2,20 @@
 
 ## Project setup
 ```
+cd vue-nest-master
 npm install
+npm install axios
+npm install ...?
+создам файл с зависимостями
 ```
 
 ### Compiles and hot-reloads for development
 ```
+cd get_data
+npm start
+cd ..
 npm run serve
+сделаю скрипт для запуска одной командой
 ```
 
 ### Compiles and minifies for production
