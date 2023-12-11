@@ -1,43 +1,31 @@
 <template>
-    <div>
-      <NavigationMenu />
-      <h1>List of Books</h1>
-      <div class="divider"></div>
-      <input type="text" v-model="searchQuery" placeholder="Поиск книг" />
-      <select v-model="selectedSort" @change="sortBooks">
-        <option value="title">Сортировка по алфавиту названий</option>
-        <option value="price_asc">Сортировка по возрастанию цены</option>
-        <option value="price_desc">Сортировка по убыванию цены</option>
-      </select>
-      <div class="book-container">
-        <div v-for="book in filteredBooks" :key="book.title" class="book-card">
-        <div v-for="book in books" :key="book.title" class="book-card">
-          <img src="/images/img.png" alt="Изображение книги">
-          <div>
-            <h4>{{ book.title }}</h4>
-            <p>{{ book.price }}</p>
-            <a :href="book.bookUrl" class="btn btn-primary btn-buy">More</a>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
+  <div>
+    <NavigationMenu />
+    <h1>List of Books</h1>
+    <div class="divider"></div>
+    <SearchAndSortForm :searchQuery.sync="searchQuery" :selectedSort.sync="selectedSort" />
+    <BookListContainer :books="filteredBooks" />
+  </div>
+</template>
 
 <script>
 import axios from 'axios';
-import NavigationMenu from './NavigationMenu.vue';
+import NavigationMenu from '../../NavigationMenu.vue';
+import SearchAndSortForm from './SearchAndSortForm.vue';
+import BookListContainer from './BookListContainer.vue';
 
 export default {
   name: 'ListBooks',
   components: {
-    NavigationMenu
+    NavigationMenu,
+    SearchAndSortForm,
+    BookListContainer
   },
   data() {
     return {
       books: [],
       selectedSort: 'title',
-      searchQuery: ''// значение по умолчанию для сортировки
+      searchQuery: '' // значение по умолчанию для сортировки
     };
   },
   computed: {
@@ -70,12 +58,8 @@ export default {
       this.books = response.data;
       this.sortBooks(); // Сортировать книги сразу после получения
     } catch (error) {
-      console.error("There was an error fetching the books:", error);
+      console.error('There was an error fetching the books:', error);
     }
   }
 };
 </script>
-
-
-
-  
